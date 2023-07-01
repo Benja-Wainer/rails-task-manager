@@ -6,7 +6,10 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   # Read all
-  get 'tasks', to: 'tasks#index', as: 'tasks'
+  get 'tasks', to: 'tasks#index'
+  # Create
+  get 'tasks/new', to: 'tasks#new', as: :new_task
+  post 'tasks', to: 'tasks#create'
   # Read one
-  get 'tasks/:id', to: 'tasks#show', as: 'task'
+  get 'tasks/:id', to: 'tasks#show', as: :task
 end
